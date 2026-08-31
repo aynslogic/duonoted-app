@@ -1,0 +1,96 @@
+/* DuoNoted legal pages — privacy and terms. Same structural pattern as
+   futbolik's legal.css (this developer's other app), recoloured to
+   DuoNoted's own tokens (see the app's globals.css) rather than futbolik's
+   green. System font stack on purpose: these pages are read mostly by the
+   Play review team and occasionally a user, not worth a webfont fetch. */
+:root {
+  --bg: #fbfaf7;
+  --card: #ffffff;
+  --border: #ddd9cf;
+  --text: #14181a;
+  --muted: #5c5a52;
+  --accent: #14532d;
+  --chrome: #14181a;
+  --chrome-text: #f3eee0;
+  --chrome-muted: #b9b2a1;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181a;
+    --card: #1f262a;
+    --border: #2a3236;
+    --text: #f3eee0;
+    --muted: #b9b2a1;
+    --accent: #95cfa2;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  background: var(--chrome);
+  padding: 28px 20px;
+}
+header .wrap { max-width: 720px; margin: 0 auto; }
+header a.brand {
+  color: var(--chrome-text);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+header p { color: var(--chrome-muted); font-size: 13px; margin-top: 4px; }
+
+main { max-width: 720px; margin: 0 auto; padding: 24px 20px 64px; }
+
+nav.langs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+nav.langs a {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+}
+nav.langs a[aria-current="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 14px;
+}
+
+h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em; }
+h2 { font-size: 16px; font-weight: 650; margin-bottom: 10px; letter-spacing: -0.01em; }
+p  { font-size: 14.5px; color: var(--text); margin-bottom: 12px; }
+p:last-child { margin-bottom: 0; }
+a { color: var(--accent); }
+.updated { font-size: 12.5px; color: var(--muted); margin-bottom: 22px; }
+
+footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 48px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+footer a { color: var(--muted); }
